@@ -17,6 +17,7 @@
   },
   "projects": {
     "catalog-web": { "tags": [] },
-    "catalog-web-e2e": { "tags": [], "implicitDependencies": ["catalog-web"] }
+    "catalog-web-e2e": { "tags": [], "implicitDependencies": ["catalog-web"] },
+    "domain-home": { "tags": ["domain", "route"] }
   }
 }
