@@ -22,13 +22,5 @@
       }
     }
   },
-  "projects": {
-    "catalog": {
-      "tags": []
-    },
-    "catalog-e2e": {
-      "tags": [],
-      "implicitDependencies": ["catalog"]
-    }
-  }
+  "projects": {}
 }
