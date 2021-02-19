@@ -8,7 +8,7 @@
     "nx.json": "*"
   },
   "affected": { "defaultBase": "master" },
-  "npmScope": "altia1",
+  "npmScope": "alt",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -16,7 +16,7 @@
     }
   },
   "projects": {
-    "catalog": { "tags": [] },
-    "catalog-e2e": { "tags": [], "implicitDependencies": ["catalog"] }
+    "catalog-web": { "tags": [] },
+    "catalog-web-e2e": { "tags": [], "implicitDependencies": ["catalog-web"] }
   }
 }

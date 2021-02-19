@@ -32,34 +32,34 @@
     }
   },
   "projects": {
-    "catalog": {
+    "catalog-web": {
       "projectType": "application",
-      "root": "apps/catalog",
-      "sourceRoot": "apps/catalog/src",
+      "root": "apps/catalog-web",
+      "sourceRoot": "apps/catalog-web/src",
       "prefix": "alt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/catalog",
-            "index": "apps/catalog/src/index.html",
-            "main": "apps/catalog/src/main.ts",
-            "polyfills": "apps/catalog/src/polyfills.ts",
-            "tsConfig": "apps/catalog/tsconfig.app.json",
+            "outputPath": "dist/apps/catalog-web",
+            "index": "apps/catalog-web/src/index.html",
+            "main": "apps/catalog-web/src/main.ts",
+            "polyfills": "apps/catalog-web/src/polyfills.ts",
+            "tsConfig": "apps/catalog-web/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/catalog/src/favicon.ico",
-              "apps/catalog/src/assets"
+              "apps/catalog-web/src/favicon.ico",
+              "apps/catalog-web/src/assets"
             ],
-            "styles": ["apps/catalog/src/styles.css"],
+            "styles": ["apps/catalog-web/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/catalog/src/environments/environment.ts",
-                  "with": "apps/catalog/src/environments/environment.prod.ts"
+                  "replace": "apps/catalog-web/src/environments/environment.ts",
+                  "with": "apps/catalog-web/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -87,65 +87,64 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "catalog:build"
+            "browserTarget": "catalog-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "catalog:build:production"
+              "browserTarget": "catalog-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "catalog:build"
+            "browserTarget": "catalog-web:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/catalog/src/**/*.ts",
-              "apps/catalog/src/**/*.html"
+              "apps/catalog-web/src/**/*.ts",
+              "apps/catalog-web/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/catalog"],
+          "outputs": ["coverage/apps/catalog-web"],
           "options": {
-            "jestConfig": "apps/catalog/jest.config.js",
+            "jestConfig": "apps/catalog-web/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "catalog-e2e": {
-      "root": "apps/catalog-e2e",
-      "sourceRoot": "apps/catalog-e2e/src",
+    "catalog-web-e2e": {
+      "root": "apps/catalog-web-e2e",
+      "sourceRoot": "apps/catalog-web-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/catalog-e2e/cypress.json",
-            "tsConfig": "apps/catalog-e2e/tsconfig.e2e.json",
-            "devServerTarget": "catalog:serve"
+            "cypressConfig": "apps/catalog-web-e2e/cypress.json",
+            "tsConfig": "apps/catalog-web-e2e/tsconfig.e2e.json",
+            "devServerTarget": "catalog-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "catalog:serve:production"
+              "devServerTarget": "catalog-web:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/catalog-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/catalog-web-e2e/**/*.{js,ts}"]
           }
         }
       }
     }
-  },
-  "defaultProject": "catalog"
+  }
 }
