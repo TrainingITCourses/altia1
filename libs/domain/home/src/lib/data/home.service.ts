@@ -9,7 +9,7 @@ export class HomeService {
   constructor(private http: HttpClient) {}
 
   getCategories$() {
-    const url = 'https://angularbuilders-pre.herokuapp.com/api/v2/categories';
+    const url = 'https://angularbuilders-pre.herokuapp.com/api/v1/categories';
     return this.http
       .get<unknown>(url)
       .pipe(map((results: any) => results.data));

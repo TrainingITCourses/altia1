@@ -1,4 +1,4 @@
-<ab-home-categories *ngIf="categories$ | async as categories " [props]="categories">
+<!-- <ab-home-categories *ngIf="categories$ | async as categories " [props]="categories">
 </ab-home-categories>
 <aside *ngIf="loading">
   <header>
@@ -10,4 +10,9 @@
     <h3>💫 Houston, we have a problem! 💫</h3>
     <h5>{{ errorMessage }}</h5>
   </header>
-</aside>
+</aside> -->
+<ab-ui-loading [props$]="categories$" (dataArrive)="categories=$event">
+  <main>
+    <ab-home-categories [props]="categories"></ab-home-categories>
+  </main>
+</ab-ui-loading>
