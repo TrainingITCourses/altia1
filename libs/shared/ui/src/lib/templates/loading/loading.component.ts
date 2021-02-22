@@ -17,26 +17,24 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoadingComponent implements OnInit {
-  @Input() props$!: Observable<unknown>;
-  @Output() dataArrive = new EventEmitter<unknown>();
+  @Input() props!: Observable<unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Output() dataArrive = new EventEmitter<any>();
   loading = true;
   errorMessage = '';
   constructor(private cdr: ChangeDetectorRef) {}
   ngOnInit(): void {
-    this.props$ = this.props$.pipe(
+    this.props = this.props.pipe(
       tap({
         next: (data) => {
-          console.log('DATA');
           this.loading = false;
           this.dataArrive.next(data);
         },
         error: (err) => {
-          console.log('ERROR');
           this.cdr.markForCheck();
           this.loading = false;
           this.errorMessage = err.message;
         },
-        complete: () => console.log('COMPLETE'),
       })
     );
   }

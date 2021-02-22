@@ -11,7 +11,7 @@
     <h5>{{ errorMessage }}</h5>
   </header>
 </aside> -->
-<ab-ui-loading [props$]="categories$" (dataArrive)="categories=$event">
+<ab-ui-loading [props]="categories$" (dataArrive)="categories=$event">
   <main>
     <ab-home-categories [props]="categories"></ab-home-categories>
   </main>
