@@ -1,0 +1,13 @@
+<ab-home-categories *ngIf="categories$ | async as categories " [props]="categories">
+</ab-home-categories>
+<aside *ngIf="loading">
+  <header>
+    <h4>📡 Waiting... No data yet 📡</h4>
+  </header>
+</aside>
+<aside *ngIf="errorMessage">
+  <header>
+    <h3>💫 Houston, we have a problem! 💫</h3>
+    <h5>{{ errorMessage }}</h5>
+  </header>
+</aside>
