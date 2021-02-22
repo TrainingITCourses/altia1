@@ -1,3 +1,6 @@
-<pre>
-  {{ props | json}}
-</pre>
+<header>
+  <ab-ui-title props="Categories"></ab-ui-title>
+</header>
+<section>
+  <ab-ui-card *ngFor="let category of props" [props]="toCard(category)"></ab-ui-card>
+</section>
