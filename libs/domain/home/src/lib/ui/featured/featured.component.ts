@@ -15,6 +15,7 @@ export class FeaturedComponent {
       title: item.name,
       description: item.description || '',
       footer: '',
+      link: '../item/' + item.id,
     };
     return card;
   }
