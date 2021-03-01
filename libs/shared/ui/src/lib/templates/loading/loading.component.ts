@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -45,3 +45,22 @@ export class LoadingComponent implements OnInit {
     );
   }
 }
+of(1).subscribe(
+  (d) => {},
+  (e) => {}
+);
+of(1).subscribe({
+  next: (d) => {},
+  error: (e) => {},
+});
+of(1)
+  .pipe(
+    tap(
+      (d) => {},
+      (e) => {}
+    )
+  )
+  .subscribe(
+    (d) => {},
+    (e) => {}
+  );
