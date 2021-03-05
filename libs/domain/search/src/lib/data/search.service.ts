@@ -13,7 +13,7 @@ export class SearchService {
     const url = 'https://angularbuilders-pre.herokuapp.com/api/v1/items';
     return this.http.get<any>(url).pipe(
       map((results) => results.data),
-      map((data) => data.filter((i) => this.byTerm(i, term)))
+      map((data) => data.filter((i: any) => this.byTerm(i, term)))
     );
   }
 
